@@ -39,9 +39,12 @@
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 
 <script>
+    console.log('teste')
     document.querySelectorAll('[wm-folder]').forEach(folder => {
         folder.onclick = function(e) {
-            console.log('teste')
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
         }
     })
 </script>

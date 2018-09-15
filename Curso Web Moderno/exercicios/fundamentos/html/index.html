@@ -16,25 +16,25 @@
         <h1>Exercícios HTML</h1>
     </header>
     <nav>
-        <a href="exercicios/teste.html">00 - Teste</a>|
-        <a href="exercicios/texto1.html">01 - Teste</a>|
-        <a href="exercicios/listas.html">Listas - 01</a>|
-        <a href="exercicios/listaAninhada.html">Lista aninhada</a>|
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a>|
+        <a href wm-nav="exercicios/texto1.html">01 - Teste</a>|
+        <a href wm-nav="exercicios/listas.html">Listas - 01</a>|
+        <a href wm-nav="exercicios/listaAninhada.html">Lista aninhada</a>|
+        <a href wm-nav="exercicios/links.html">Links</a>|
     </nav>
     <section id="conteudo"></section>
     <footer>
         Curso Web Moderno
     </footer>
     <script>
-        document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('[wm-nav]').forEach(link => {
             
             const conteudo = document.getElementById('conteudo')
-            
             link.onclick = function(e) {
             
                 e.preventDefault()
                 
-                fetch(link.href)
+                fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
